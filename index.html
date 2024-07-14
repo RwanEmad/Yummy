@@ -1,0 +1,273 @@
+<html>
+
+<head>
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+ -->
+
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gugi&family=Playwrite+DK+Uloopet:wght@100..400&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+
+
+<body>
+
+
+<div class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center">
+    <i class="fa fa-spinner fa-spin fa-5x"></i>
+</div>
+
+    <section id="Home" class="">
+
+        <div class="home d-flex">
+            <div class="side-nav  vh-100 position-fixed z-3 d-flex ">
+                <div class="nav-tab p-4 vh-100 position-relative text-white d-flex flex-column justify-content-between ">
+                   <div class="nav-links">
+                    <ul class="list-unstyled overflow-hidden ">
+                        <li  class="py-3 position-relative "><a onclick="showSearchInputs()" href="#" class="text-decoration-none text-white"  > Search</a></li>
+                        <li  class="py-3 position-relative "><a onclick="getCategories()" href="#" class="text-decoration-none text-white"  > Categories</a></li>
+                        <li  class="py-3 position-relative "><a onclick="getMealsArea()" href="#" class="text-decoration-none text-white"  > Area</a></li>
+                        <li  class="py-3 position-relative "><a onclick="getIngredients()" href="#" class="text-decoration-none text-white"  > Ingredients</a></li>
+                        <li  class="py-3 position-relative "><a onclick="showContactUs()" href="#" class="text-decoration-none text-white"  > Contact Us</a></li>
+                    </ul>
+                
+                   </div>
+                   <div class="nav-footer">
+                    <div class="icons mb-2">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div class="footer">
+                        <p>Copyright Â© 2019 All Rights <br>Reserved.</p>
+                    </div>
+                </div>
+                </div>
+             
+                <div class="nav-header py-4 px-2 bg-white d-flex flex-column justify-content-between align-items-center">
+                    <img class="logo " src="images/logo.png" alt="" srcset="">
+                    <i id="navSideBtn" class="fa-solid  fa-bars"></i>
+                    <div>
+                        <i class="fa-solid fa-globe d-block m-1"></i>
+                        <i class="fa-solid fa-share-nodes m-1"></i>
+                    </div>
+
+
+                    
+                </div>
+            </div>
+            <div id="DisplayArea" class="container home-content">
+                <div  id="content" class="row d-none mt-5">
+                    <div class="col-md-3 p-3 ">
+                        <div  class="content  rounded-3 position-relative">
+                            <img src="images/g046bb1663960946.jpg" class="w-100 rounded-3" alt="">
+                             <div class="overlay h-100 w-100 rounded-3 d-flex align-items-center ps-2">
+                                <h3 class="">Sushi</h3>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section id="Details" class="pt-5 d-none">
+                    <div id="detailsLoading" class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center">
+                        <i class="fa fa-spinner fa-spin fa-5x"></i>
+                    </div>
+                    <div id="detailsContent">
+
+                    </div>
+                 
+                </section>
+
+                <section id="Search" class="pt-5 d-none">
+                    <div id="SearchLoading" class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center">
+                        <i class="fa fa-spinner fa-spin fa-5x"></i>
+                    </div>
+                    <div class="container ">
+                        <div id="RowData" class="row">
+                            <div class="col-md-6 mb-5 mt-2">
+                                <input onkeyup="searchByName(this.value)" class="form-control bg-transparent text-white" type="text" placeholder="Search By Name">
+                            </div>
+                            <div class="col-md-6 mb-5 mt-2">
+                                <input onkeyup="searchByFLetter(this.value)" maxlength="1" class="form-control bg-transparent text-white" type="text" placeholder="Search By First Letter">
+                            </div>
+                        </div>
+                         <section id="SearchResult" class="d-none mt-5 position-relative">
+                     
+                            <div id="searchResultsLoading"  class="inner-loading-screen top-0 start-0 end-0 bottom-0 justify-content-center align-items-center" style="display: none;">
+                                <i class="fa fa-spinner fa-spin fa-5x"></i>
+                            </div>
+                                <div class="container">
+                                    <div  id="resultsContent" class="row  ">
+                                       
+                                    
+                                    </div>
+                                </div>
+                            </section>
+                    </div>
+                </section>
+                
+                <section id="categories" class="pt-5 d-none">
+                    <div id="categoriesLoading" class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center">
+                        <i class="fa fa-spinner fa-spin fa-5x"></i>
+                    </div>
+                    <div class="container">
+                        <div  id="CatContent" class="row ">
+                            <div class="col-md-3 p-3 ">
+                                <div onclick="" class="content  rounded-3 position-relative">
+                                    <img src="images/chicken.png" class="w-100 rounded-3" alt="">
+                                     <div class="overlay h-100 w-100 rounded-3 d-flex flex-column justify-content-center align-items-center px-2 text-center">
+                                        <h3 class="">Sushi</h3>
+                                        <p>Beef is the culinary name for meat from cattle, particularly skeletal muscle. Humans have been eating beef since prehistoric times.[1]</p>
+                                     </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="catMeals" class="d-none">
+                    <div id="catMealsLoading" class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center">
+                        <i class="fa fa-spinner fa-spin fa-5x"></i>
+                    </div>
+                    <div class="container">
+                        <div  id="CatMealsContent" class="row ">
+                           
+                        </div>
+                    </div>
+                </section>
+
+                <section id="Areas" class="pt-5 d-none">
+                    <div id="areasLoading" class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center">
+                        <i class="fa fa-spinner fa-spin fa-5x"></i>
+                    </div>
+                    <div class="container">
+                        <div  id="AreasContent" class="row ">   
+                            <div class="col-md-3 p-3 ">
+                                <div onclick="" class="content  rounded-3 position-relative d-flex flex-column justify-content-center align-items-center">
+                                    <i class="fa-solid fa-house-laptop fa-4x text-white"></i>
+                                    <h3 class="text-white mt-3">British</h3>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="AreaMeals" class="d-none">
+                    <div id="AreaMealsLoading" class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center">
+                        <i class="fa fa-spinner fa-spin fa-5x"></i>
+                    </div>
+                    <div class="container">
+                        <div  id="AreaMealsContent" class="row mt-5 ">
+                           
+                        </div>
+                    </div>
+                </section>
+
+                <section id="Ingredients" class="pt-5 d-none">
+                    <div id="IngredientsLoading" class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center">
+                        <i class="fa fa-spinner fa-spin fa-5x"></i>
+                    </div>
+                    <div class="container">
+                        <div  id="IngredientsContent" class="row ">   
+                            
+                        </div>
+                       
+                    </div>
+                </section>
+
+                <section id="IngredientMeals" class="d-none">
+                    <div id="IngredientMealsLoading" class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center">
+                        <i class="fa fa-spinner fa-spin fa-5x"></i>
+                    </div>
+                    <div class="container">
+                        <div  id="IngredientMealsContent" class="row  mt-5">
+                           
+                        
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contact" class="d-grid m-auto align-items-center justify-content-center  vh-100 w-100 d-none">
+                    <div id="contactLoading" class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center">
+                        <i class="fa fa-spinner fa-spin fa-5x"></i>
+                    </div>
+                    <div class="container  w-75 px-5 d-flex justify-content-center flex-wrap">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <input id="nameInput" onkeyup="inputsValidation()" type="text" class="form-control" placeholder="Enter Your Name">
+                                <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none">
+                                    Special characters and numbers not allowed
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="emailInput" onkeyup="inputsValidation()" type="email" class="form-control " placeholder="Enter Your Email">
+                                <div id="emailAlert" class="alert alert-danger w-100 mt-2 d-none">
+                                    Email not valid *exemple@yyy.zzz
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="phoneInput" onkeyup="inputsValidation()" type="text" class="form-control " placeholder="Enter Your Phone">
+                                <div id="phoneAlert" class="alert alert-danger w-100 mt-2 d-none">
+                                    Enter valid Phone Number
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="ageInput" onkeyup="inputsValidation()" type="number" class="form-control " placeholder="Enter Your Age">
+                                <div id="ageAlert" class="alert alert-danger w-100 mt-2 d-none">
+                                    Enter valid age
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="passwordInput" onkeyup="inputsValidation()" type="password" class="form-control " placeholder="Enter Your Password">
+                                <div id="passwordAlert" class="alert alert-danger w-100 mt-2 d-none">
+                                    Enter valid password *Minimum eight characters, at least one letter and one number:*
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="repasswordInput" onkeyup="inputsValidation()" type="password" class="form-control " placeholder="Repassword">
+                                <div id="repasswordAlert" class="alert alert-danger w-100 mt-2 d-none">
+                                    Enter valid repassword 
+                                </div>
+                            </div>
+                        </div>
+                        <button id="submitBtn" disabled="" class="btn btn-outline-danger px-3 py-2 mt-4">Submit</button>
+
+                    </div>
+                </section>
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+   
+
+
+
+
+
+
+
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+body{
+    background-color: #0D0D0D;
+    /* overflow: hidden; */
+}
+
+
+/* 
+
+font-family: "Gugi", sans-serif;
+
+font-family: "Playwrite DK Uloopet", cursive;
+
+*/
+.loading-screen{
+    z-index: 999;
+    display: flex;
+    color: white;
+}
+
+.inner-loading-screen{
+    position: absolute;
+    z-index: 9;
+    background-color: #0D0D0D;
+    display: flex;
+    color: white;
+}
+#Home{
+
+.home-content{
+
+   
+
+    
+    .content{
+        overflow: hidden;
+        cursor: pointer;
+    }
+     .overlay{
+        background-color: #f9f6f6ca;
+        position: absolute;
+        top: 101%;
+        left: 0;
+        transition:all 0.5s ;
+    }
+    .content:hover .overlay{
+        top: 0;
+    }
+    .overlay h3{
+     font-family: "Playwrite DK Uloopet", cursive;
+     font-size: 28px;
+     font-weight: 500;
+     line-height: 34px;
+     color: #000;
+    }
+}
+.side-nav{
+    background-color: #0D0D0D;
+    /* left: -104%; */
+    left: 20%;
+    .nav-tab{
+        top: 0;
+        .nav-links ul li{
+            top: 0;
+        }
+        .nav-links ul li  a{
+            font-family: "Playwrite DK Uloopet", cursive;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+           }
+           .nav-footer{
+            font-family: "Playwrite DK Uloopet", cursive;
+        
+           }
+    }
+   .nav-header{
+   
+    .logo{
+        width: 50px;
+    }
+    i{
+        font-weight: 900;
+        color: #000;
+        font-size: 20px;
+    }
+    .fa-x{
+        font-size: 34px;
+        cursor: pointer;
+    }
+    .fa-bars{
+        font-size: 40px;
+        cursor: pointer;
+    }
+}
+}
+
+
+}
+
+
+#Details{
+    h2{
+        font-family: "Playwrite DK Uloopet", cursive;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 38px;
+        color: rgb(249, 246, 246);
+    }
+    p{
+        font-family: "Playwrite DK Uloopet", cursive;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: rgb(249, 246, 246);
+    }
+    h3{
+        font-family: "Playwrite DK Uloopet", cursive;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 34px;
+        color: rgb(249, 246, 246);
+    }
+    h3 span{
+        font-weight: 700;
+    }
+}
+
+#categories{
+    #CatContent{
+        p{
+            font-family: "Playwrite DK Uloopet", cursive;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #000;
+        }
+    }
+}
+#AreaMeals #AreaMealsContent .content i {
+    font-size: 24px;
+    font-weight: 900;
+    color: rgb(249, 246, 246);
+}
+#AreaMeals #AreaMealsContent .content  h3 ,#Ingredients #IngredientsContent .content h3 ,#Ingredients #IngredientsContent .content p{
+    font-family: "Playwrite DK Uloopet", cursive;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 38px;
+    color: rgb(249, 246, 246);
+}
+#Ingredients #IngredientsContent .content h3{
+    text-align: center;
+}
+#Ingredients #IngredientsContent .content p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+/* #AreaMeals{
+    #AreaMealsContent .content {
+        .content i{
+            font-size: 24px;
+            font-weight: 900;
+            color: rgb(249, 246, 246);
+        }
+         h3{
+            font-family: "Playwrite DK Uloopet", cursive;
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 38px;
+            color: rgb(249, 246, 246);
+        }
+        
+    }
+} */
+
+
+
+#Search{
+    input{
+     color: white;
+
+    padding: 8px 12px;     
+    }
+    ::placeholder {
+        font-family: "Playwrite DK Uloopet", cursive;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: rgb(249, 246, 246);
+        opacity: 0.5; /* Firefox */
+      }
+  
+}
